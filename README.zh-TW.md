@@ -8,7 +8,7 @@
 
 -   [英語](README.en.md)
 -   [簡體中文](README.zh-CN.md)
--   [繁體中文](README.zh-TW.md)
+-   [繁体中文](README.zh-TW.md)
 -   [印地語](README.hi.md)
 -   [法語](README.fr.md)
 -   [阿拉伯](README.ar.md)
