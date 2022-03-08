@@ -19,7 +19,7 @@
 
 ## [CocosCreator3D 3.4.1](./version/Version%203.4.1.md)
 
-## Production principle
+## 制作原理
 
 ### Because CocosCreator has been using the 3d version since[SystemJS](https://github.com/systemjs/systemjs)to load all script resources, but the way SystemJS loads scripts is to load scripts through web requests (maybe the method is wrong), but the prerequisite for Playable ad production is that it is not allowed to load resources through network requests, all related resources It must be in the same Html file, so the early version was loaded by modifying SystemJS, but after many tests (a long, long period of testing), I found some very ingenious methods, which can be done without modifying SystemJS.
 
@@ -172,4 +172,4 @@ System.register([],(function(e,t){"use strict";return{execute:function(){
 
 # what must be done
 
-[wasm加载处理](./README.md#wasm加载文件处理)\|[WASM路径传入处理](./README.md#wasm路径传入处理)This operation is necessary, because the JavaScript fetch operation method is used, and only the engine source code can be forced to be modified (if wasm is not used, it can be ignored)
+[wasm loading processing](./README.md#wasm加载文件处理)\|[WASM path incoming processing](./README.md#wasm路径传入处理)This operation is necessary, because the JavaScript fetch operation method is used, and only the engine source code can be forced to be modified (if wasm is not used, it can be ignored)
