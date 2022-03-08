@@ -21,7 +21,7 @@
 
 ## Principe de fabrication
 
-### 因为CocosCreator 从3d版本后就开始通过用[SystemJS](https://github.com/systemjs/systemjs)pour charger toutes les ressources de script, mais la façon dont SystemJS charge les scripts consiste à charger des scripts via des requêtes Web (peut-être que la méthode est erronée), mais la condition préalable à la production d'annonces jouables est qu'il n'est pas autorisé à charger des ressources via des requêtes réseau, toutes les ressources associées Il doit être dans le même fichier Html, donc la première version a été chargée en modifiant SystemJS, mais après de nombreux tests (une longue, longue période de test), j'ai trouvé des méthodes très ingénieuses, qui peuvent être faites sans modifier SystemJS.
+### Parce que CocosCreator utilise la version 3d depuis[SystemJS](https://github.com/systemjs/systemjs)pour charger toutes les ressources de script, mais la façon dont SystemJS charge les scripts consiste à charger des scripts via des requêtes Web (peut-être que la méthode est erronée), mais la condition préalable à la production d'annonces jouables est qu'il n'est pas autorisé à charger des ressources via des requêtes réseau, toutes les ressources associées Il doit être dans le même fichier Html, donc la première version a été chargée en modifiant SystemJS, mais après de nombreux tests (une longue, longue période de test), j'ai trouvé des méthodes très ingénieuses, qui peuvent être faites sans modifier SystemJS.
 
 #### [System.register](https://github.com/systemjs/systemjs/blob/main/docs/system-register.md)
 
@@ -123,7 +123,7 @@ Injectez ensuite PPY.js et PPS.js dans le fichier Html, comme suit
 
 (Si vous voulez exécuter l'exemple normalement, le principe est d'injecter le module SystemJS, sinon il ne fonctionnera pas normalement) Le code en bas sera exécuté avec succès
 
-Ce qui précède est un exemple simple. Le projet effectue de nombreux traitements correspondants via cette méthode, puis génère un seul fichier Html.
+以上是简单的示例，该工程就是通过该方法做了大量对应处理，然后生成单个Html文件的
 
 ## Traitement du fichier de chargement WASM
 
@@ -160,7 +160,7 @@ System.register([],(function(e,t){"use strict";return{execute:function(){
 
 ```
 
-Remplacez tout le paramètre de 'new URL()' par 'assets/bullet.wasm-c98527b6.wasm', ce qui est très bien. Le nom du fichier wasm dans la version 3.4.1 de CocosCreator3D ne devrait pas changer lors de l'empaquetage (s'il est modifié, veuillez le remplacer par le nom de fichier correct)
+Remplacez tout le paramètre de 'new URL()' par 'assets/bullet.wasm-c98527b6.wasm', ce qui est très bien. Le nom du fichier wasm dans la version CocosCreator3D 3.4.1 ne devrait pas changer lorsqu'il est empaqueté ( s'il est modifié, veuillez le remplacer par le nom de fichier correct)
 comme suit:
 
 ```javascript
@@ -172,4 +172,5 @@ System.register([],(function(e,t){"use strict";return{execute:function(){
 
 # ce qu'il faut faire
 
-[traitement de chargement wasm](./README.md#wasm加载文件处理)\|[Traitement entrant du chemin WASM](./README.md#wasm路径传入处理)Cette opération est nécessaire, car la méthode d'opération de récupération JavaScript est utilisée et seul le code source du moteur peut être forcé à être modifié (si wasm n'est pas utilisé, il peut être ignoré)
+[traitement de chargement wasm](./README.md#wasm加载文件处理)\|[Traitement entrant du chemin WASM](./README.md#wasm路径传入处理)
+该操作是必须的，因为用到了JavaScript fetch操作方法，只能强制修改引擎源码（如果没有使用wasm可以忽略）
